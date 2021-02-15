@@ -1,22 +1,21 @@
 import {StyleSheet, Text, TouchableOpacity, View} from "react-native";
-import {StatusBar} from "expo-status-bar";
 import React from "react";
 import {useNavigation} from "@react-navigation/native";
+import {Screens} from "../navigations/Navigation";
 
 export const Main = function () {
   const {navigate} = useNavigation()
 
   return (
     <View style={styles.container}>
-      <Text>ほめ家事へようこそ！</Text>
-      <StatusBar style="auto" />
+      <Text>ようこそ！</Text>
       <TouchableOpacity
         onPress={() => {
-          navigate('Login')
+          navigate(Screens.Tab)
         }}
       >
         <Text>
-          ログイン
+          タスクを記録する
         </Text>
       </TouchableOpacity>
     </View>
