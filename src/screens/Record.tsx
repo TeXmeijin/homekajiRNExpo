@@ -1,12 +1,43 @@
 import React from "react";
-import {Text, View} from "react-native";
+import {ScrollView, StyleSheet, View} from "react-native";
+import TaskWithRecord from "../components/TaskWithRecord";
 
 export const Record = () => {
+  const taskList = [
+    '洗濯機を回す',
+    '洗濯物を干す',
+    '皿洗い',
+    'ゴミ出し',
+    '洗濯物を畳む',
+    '食事を作る',
+    '風呂を入れる',
+    '湯船を掃除する',
+    '湯船を掃除する',
+    '湯船を掃除する',
+    '湯船を掃除する',
+  ]
+
   return (
-    <View style={{ paddingVertical: 60, paddingHorizontal: 24, backgroundColor: '#333', height: '100%' }}>
-      <Text style={{color: '#fafafa'}}>
-        タスクを記録する
-      </Text>
-    </View>
+    <ScrollView style={styles.container}>
+      {/* ScrollView自体にPaddingを当てるとBottom Barの下に入り込んでしまう */}
+      <View style={{paddingTop: 80}}>
+        {
+          taskList.map(task => {
+            return (
+              <TaskWithRecord>
+                {task}
+              </TaskWithRecord>
+            )
+          })
+        }
+      </View>
+    </ScrollView>
   )
 }
+
+const styles = StyleSheet.create({
+  container: {
+    paddingHorizontal: 24,
+    backgroundColor: '#f3ecd7',
+  },
+})
