@@ -1,8 +1,9 @@
 import React from "react";
 import {ScrollView, StyleSheet, View} from "react-native";
 import TaskWithRecord from "../components/TaskWithRecord";
+import {COLORS} from "../constants/COLORS";
 
-export const Record = () => {
+export const TaskList = () => {
   const taskList = [
     '洗濯機を回す',
     '洗濯物を干す',
@@ -38,6 +39,6 @@ export const Record = () => {
 const styles = StyleSheet.create({
   container: {
     paddingHorizontal: 24,
-    backgroundColor: '#f3ecd7',
+    backgroundColor: COLORS.primary,
   },
 })

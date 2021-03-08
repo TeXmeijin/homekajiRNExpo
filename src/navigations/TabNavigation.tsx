@@ -1,18 +1,26 @@
 import React from "react";
 import {createBottomTabNavigator} from "@react-navigation/bottom-tabs";
-import {Record} from "../screens/Record";
-import {Text} from "react-native";
+import {TaskList} from "../screens/TaskList";
+import TaskListTabIcon from "../components/navigation/TaskListTabIcon";
+import ActivityListTabIcon from "../components/navigation/ActivityListTabIcon";
+import {ActivityList} from "src/screens/ActivityList";
+import {COLORS} from "../constants/COLORS";
+import AccountTabIcon from "../components/navigation/AccountTabIcon";
 
 const Tab = createBottomTabNavigator()
 
 export const TabScreens = {
-  Record: 'Record'
+  TaskList: 'TaskList',
+  Activity: 'Activity',
+  Account: 'Account',
 }
 
 export const TabNavigator = () => {
   return (
-    <Tab.Navigator>
-      <Tab.Screen name={TabScreens.Record} component={Record} options={{title: 'Record', tabBarLabel: () => <><Text>Record</Text></>}} />
+    <Tab.Navigator tabBarOptions={{style: {height: 100, backgroundColor: COLORS.primary}}}>
+      <Tab.Screen name={TabScreens.TaskList} component={TaskList} options={{title: 'Tasks', tabBarIcon: TaskListTabIcon, tabBarLabel: () => <></>}}/>
+      <Tab.Screen name={TabScreens.Activity} component={ActivityList} options={{title: 'Activity', tabBarIcon: ActivityListTabIcon, tabBarLabel: () => <></>}}/>
+      <Tab.Screen name={TabScreens.Account} component={ActivityList} options={{title: 'Account', tabBarIcon: AccountTabIcon, tabBarLabel: () => <></>}}/>
     </Tab.Navigator>
   )
 }

@@ -11,6 +11,7 @@ import {
   Image
 } from "react-native";
 import React, {PropsWithChildren, useEffect, useRef, useState} from "react";
+import {COLORS} from "../constants/COLORS";
 
 
 const TaskWithRecord = (props: PropsWithChildren<{}>) => {
@@ -56,13 +57,13 @@ const TaskWithRecord = (props: PropsWithChildren<{}>) => {
 
   return (
     <Pressable style={itemStyle} onPress={onPress}>
-      <Text style={{color: '#433319', fontSize: 28, fontWeight: '100', lineHeight: 40}}>
+      <Text style={{color: COLORS.baseText, fontSize: 24, fontWeight: '100', lineHeight: 32}}>
         {props.children}
       </Text>
       <View style={style.statuses}>
         <ActivityIndicator style={style.status} size='large' color='#999' animating={isSaving}/>
         <Animated.View style={{...style.check, ...style.status, opacity: fadeAnim}}>
-          <Image width={32} height={32} source={require('../assets/840_ch_f.png')}/>
+          <Image style={{width: 48, height: 48}} resizeMode='contain' source={require('src/assets/checked.png')}/>
         </Animated.View>
       </View>
     </Pressable>
@@ -80,7 +81,7 @@ const style = StyleSheet.create({
     top: -16,
   },
   check: {
-    width: 40,
+    width: 32,
     height: 32,
     justifyContent: "center",
     alignItems: "center"
