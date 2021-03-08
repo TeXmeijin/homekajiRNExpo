@@ -3,6 +3,7 @@ import {ScrollView, StyleSheet, Text, View} from "react-native";
 import TaskRecordable from "../components/TaskRecordable";
 import {COLORS} from "../constants/COLORS";
 import {TaskGroupList} from "../types/task";
+import TaskAddButton from "../components/TaskAddButton";
 
 export const TaskList = () => {
   const taskGroups : TaskGroupList = [
@@ -69,34 +70,37 @@ export const TaskList = () => {
   ]
 
   return (
-    <ScrollView style={styles.container}>
-      {/* ScrollView自体にPaddingを当てるとBottom Barの下に入り込んでしまう */}
-      <View style={{paddingTop: 80}}>
-        {
-          taskGroups.map(taskGroup => {
-            return (
-              <View style={styles.taskGroup}>
-                <View>
-                  <Text style={styles.taskGroupName}>
-                    {taskGroup.name}
-                  </Text>
+    <>
+      <ScrollView style={styles.container}>
+        {/* ScrollView自体にPaddingを当てるとBottom Barの下に入り込んでしまう */}
+        <View style={{paddingTop: 80}}>
+          {
+            taskGroups.map(taskGroup => {
+              return (
+                <View style={styles.taskGroup}>
+                  <View>
+                    <Text style={styles.taskGroupName}>
+                      {taskGroup.name}
+                    </Text>
+                  </View>
+                  <View style={styles.taskList}>
+                    {
+                      taskGroup.taskList.map(task => {
+                        return (
+                          <TaskRecordable task={task}>
+                          </TaskRecordable>
+                        )
+                      })
+                    }
+                  </View>
                 </View>
-                <View style={styles.taskList}>
-                  {
-                    taskGroup.taskList.map(task => {
-                      return (
-                        <TaskRecordable task={task}>
-                        </TaskRecordable>
-                      )
-                    })
-                  }
-                </View>
-              </View>
-            )
-          })
-        }
-      </View>
-    </ScrollView>
+              )
+            })
+          }
+        </View>
+      </ScrollView>
+      <TaskAddButton style={styles.taskAddButton}/>
+    </>
   )
 }
 
@@ -114,5 +118,18 @@ const styles = StyleSheet.create({
   },
   taskList: {
     marginTop: 16,
+  },
+  taskAddButton: {
+    position: 'absolute',
+    right: 32,
+    bottom: 24,
+    shadowOffset: {
+      width: 3,
+      height: 3,
+    },
+    shadowColor: COLORS.disabled,
+    shadowOpacity: 0.7,
+    shadowRadius: 3,
+    elevation: 5,
   }
 })
