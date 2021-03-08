@@ -17,7 +17,7 @@ export const TabScreens = {
 
 export const TabNavigator = () => {
   return (
-    <Tab.Navigator tabBarOptions={{style: {height: 100, backgroundColor: COLORS.primary}}}>
+    <Tab.Navigator tabBarOptions={{style: {height: 100, backgroundColor: COLORS.primaryBackGround}}}>
       <Tab.Screen name={TabScreens.TaskList} component={TaskList} options={{title: 'Tasks', tabBarIcon: TaskListTabIcon, tabBarLabel: () => <></>}}/>
       <Tab.Screen name={TabScreens.Activity} component={ActivityList} options={{title: 'Activity', tabBarIcon: ActivityListTabIcon, tabBarLabel: () => <></>}}/>
       <Tab.Screen name={TabScreens.Account} component={ActivityList} options={{title: 'Account', tabBarIcon: AccountTabIcon, tabBarLabel: () => <></>}}/>

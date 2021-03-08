@@ -1,6 +1,8 @@
 export const COLORS = {
-  primary: '#f3ecd7',
-  baseText: '#3C3744',
-  accent: '#20BF55',
-  disabled: '#9D8189'
+  primaryBackGround: '#FBF3E3',
+  primaryTextColor: '#B2A08B',
+  accent: '#868063',
+  disabled: '#9D8189',
+  primaryLighten1: '#F7DCBE',
+  primaryLighten2: '#F29A76',
 }

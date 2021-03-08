@@ -1,6 +1,6 @@
 import React from "react";
 import {ScrollView, StyleSheet, Text, View} from "react-native";
-import TaskWithRecord from "../components/TaskWithRecord";
+import TaskRecordable from "../components/TaskRecordable";
 import {COLORS} from "../constants/COLORS";
 
 export const ActivityList = () => {
@@ -20,6 +20,6 @@ export const ActivityList = () => {
 const styles = StyleSheet.create({
   container: {
     paddingHorizontal: 24,
-    backgroundColor: COLORS.primary,
+    backgroundColor: COLORS.primaryBackGround,
   },
 })

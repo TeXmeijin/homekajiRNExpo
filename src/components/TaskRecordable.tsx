@@ -12,9 +12,9 @@ import {
 } from "react-native";
 import React, {PropsWithChildren, useEffect, useRef, useState} from "react";
 import {COLORS} from "../constants/COLORS";
+import {Task} from "../types/task";
 
-
-const TaskWithRecord = (props: PropsWithChildren<{}>) => {
+const TaskRecordable = (props: PropsWithChildren<{ task: Task }>) => {
   const [isSaving, setIsSaving] = useState(false)
   const [isCompleted, setIsCompleted] = useState(false)
 
@@ -57,8 +57,8 @@ const TaskWithRecord = (props: PropsWithChildren<{}>) => {
 
   return (
     <Pressable style={itemStyle} onPress={onPress}>
-      <Text style={{color: COLORS.baseText, fontSize: 24, fontWeight: '100', lineHeight: 32}}>
-        {props.children}
+      <Text style={{color: COLORS.primaryTextColor, fontSize: 24, fontWeight: '500', lineHeight: 32}}>
+        {props.task.name}
       </Text>
       <View style={style.statuses}>
         <ActivityIndicator style={style.status} size='large' color='#999' animating={isSaving}/>
@@ -94,13 +94,12 @@ const itemStyle: (arg: { pressed: boolean }) => ViewStyle | TextStyle | ImageSty
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-    paddingVertical: 32,
-    paddingHorizontal: 8,
+    paddingVertical: 28,
     borderBottomWidth: 1,
-    borderBottomColor: '#ddd',
+    borderBottomColor: COLORS.primaryLighten1,
     borderStyle: 'solid',
-    backgroundColor: pressed ? '#efe3af' : 'transparent'
+    backgroundColor: pressed ? COLORS.primaryLighten1 : 'transparent'
   }
 }
 
-export default TaskWithRecord
+export default TaskRecordable
