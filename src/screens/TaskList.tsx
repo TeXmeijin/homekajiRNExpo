@@ -108,6 +108,7 @@ const styles = StyleSheet.create({
   container: {
     paddingHorizontal: 24,
     backgroundColor: COLORS.primaryBackGround,
+    marginTop: -28
   },
   taskGroup: {
     marginTop: 56,
