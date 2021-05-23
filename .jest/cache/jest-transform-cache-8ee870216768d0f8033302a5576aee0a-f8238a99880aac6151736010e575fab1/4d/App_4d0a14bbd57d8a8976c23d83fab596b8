@@ -1,0 +1,10 @@
+abaf8712635633db74cc51300046f8f7
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var react_1 = require("react");
+var Navigation_1 = require("./src/navigations/Navigation");
+function App() {
+    return (<Navigation_1.Navigation />);
+}
+exports.default = App;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJmaWxlIjoiL1VzZXJzL21laWppbi9Eb2N1bWVudHMvc3JjL3ByaXZhdGUvaG9tZWthamlSTkV4cG8vQXBwLnRzeCIsIm1hcHBpbmdzIjoiOztBQUFBLCtCQUEwQjtBQUMxQiwyREFBd0Q7QUFFeEQsU0FBd0IsR0FBRztJQUN6QixPQUFPLENBQ0wsQ0FBQyx1QkFBVSxDQUFBLEVBQUUsQ0FDZCxDQUFDO0FBQ0osQ0FBQztBQUpELHNCQUlDIiwibmFtZXMiOltdLCJzb3VyY2VzIjpbIi9Vc2Vycy9tZWlqaW4vRG9jdW1lbnRzL3NyYy9wcml2YXRlL2hvbWVrYWppUk5FeHBvL0FwcC50c3giXSwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IFJlYWN0IGZyb20gJ3JlYWN0JztcbmltcG9ydCB7TmF2aWdhdGlvbn0gZnJvbSAnLi9zcmMvbmF2aWdhdGlvbnMvTmF2aWdhdGlvbic7XG5cbmV4cG9ydCBkZWZhdWx0IGZ1bmN0aW9uIEFwcCgpIHtcbiAgcmV0dXJuIChcbiAgICA8TmF2aWdhdGlvbi8+XG4gICk7XG59XG5cbiJdLCJ2ZXJzaW9uIjozfQ==
