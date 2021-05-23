@@ -77,7 +77,7 @@ export const TaskList = () => {
           {
             taskGroups.map(taskGroup => {
               return (
-                <View style={styles.taskGroup}>
+                <View key={taskGroup.name} style={styles.taskGroup}>
                   <View>
                     <Text style={styles.taskGroupName}>
                       {taskGroup.name}
