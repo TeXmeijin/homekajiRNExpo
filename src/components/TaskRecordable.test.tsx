@@ -7,14 +7,12 @@ const mockTask: Task = {
   id: 'id',
   name: 'name',
   last_checked: 'hoge',
-}
+};
 
 test('form submits two answers', () => {
-  const { getByText } = render(
-    <TaskRecordable task={mockTask} />
-  );
+  const { getByText } = render(<TaskRecordable task={mockTask} />);
 
-  const pressAble = getByText(mockTask.name)
-  expect(pressAble).toBeTruthy()
-  fireEvent.press(pressAble)
+  const pressAble = getByText(mockTask.name);
+  expect(pressAble).toBeTruthy();
+  fireEvent.press(pressAble);
 });

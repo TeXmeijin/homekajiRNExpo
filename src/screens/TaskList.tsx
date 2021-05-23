@@ -1,31 +1,31 @@
-import React from "react";
-import {ScrollView, StyleSheet, Text, View} from "react-native";
-import TaskRecordable from "../components/TaskRecordable";
-import {COLORS} from "../constants/COLORS";
-import {TaskGroupList} from "../types/task";
-import TaskAddButton from "../components/TaskAddButton";
+import React from 'react';
+import { ScrollView, StyleSheet, Text, View } from 'react-native';
+import TaskRecordable from '../components/TaskRecordable';
+import { COLORS } from '../constants/COLORS';
+import { TaskGroupList } from '../types/task';
+import TaskAddButton from '../components/TaskAddButton';
 
 export const TaskList = () => {
-  const taskGroups : TaskGroupList = [
+  const taskGroups: TaskGroupList = [
     {
       name: '料理',
       taskList: [
         {
           id: '1',
           name: '料理',
-          last_checked: '2021-03-10 22:22:22'
+          last_checked: '2021-03-10 22:22:22',
         },
         {
           id: '1',
           name: '皿洗い',
-          last_checked: '2021-03-10 22:22:22'
+          last_checked: '2021-03-10 22:22:22',
         },
         {
           id: '1',
           name: '皿洗い',
-          last_checked: '2021-03-10 22:22:22'
+          last_checked: '2021-03-10 22:22:22',
         },
-      ]
+      ],
     },
     {
       name: 'お風呂',
@@ -33,19 +33,19 @@ export const TaskList = () => {
         {
           id: '1',
           name: 'お湯張り',
-          last_checked: '2021-03-10 22:22:22'
+          last_checked: '2021-03-10 22:22:22',
         },
         {
           id: '1',
           name: '皿洗い',
-          last_checked: '2021-03-10 22:22:22'
+          last_checked: '2021-03-10 22:22:22',
         },
         {
           id: '1',
           name: '皿洗い',
-          last_checked: '2021-03-10 22:22:22'
+          last_checked: '2021-03-10 22:22:22',
         },
-      ]
+      ],
     },
     {
       name: '洗濯',
@@ -53,62 +53,51 @@ export const TaskList = () => {
         {
           id: '1',
           name: '洗濯機を回す',
-          last_checked: '2021-03-10 22:22:22'
+          last_checked: '2021-03-10 22:22:22',
         },
         {
           id: '1',
           name: '皿洗い',
-          last_checked: '2021-03-10 22:22:22'
+          last_checked: '2021-03-10 22:22:22',
         },
         {
           id: '1',
           name: '皿洗い',
-          last_checked: '2021-03-10 22:22:22'
+          last_checked: '2021-03-10 22:22:22',
         },
-      ]
+      ],
     },
-  ]
+  ];
 
   return (
     <>
       <ScrollView style={styles.container}>
         {/* ScrollView自体にPaddingを当てるとBottom Barの下に入り込んでしまう */}
-        <View style={{paddingTop: 80}}>
-          {
-            taskGroups.map(taskGroup => {
-              return (
-                <View key={taskGroup.name} style={styles.taskGroup}>
-                  <View>
-                    <Text style={styles.taskGroupName}>
-                      {taskGroup.name}
-                    </Text>
-                  </View>
-                  <View style={styles.taskList}>
-                    {
-                      taskGroup.taskList.map(task => {
-                        return (
-                          <TaskRecordable task={task}>
-                          </TaskRecordable>
-                        )
-                      })
-                    }
-                  </View>
-                </View>
-              )
-            })
-          }
+        <View style={{ paddingTop: 80 }}>
+          {taskGroups.map((taskGroup) => (
+            <View key={taskGroup.name} style={styles.taskGroup}>
+              <View>
+                <Text style={styles.taskGroupName}>{taskGroup.name}</Text>
+              </View>
+              <View style={styles.taskList}>
+                {taskGroup.taskList.map((task) => (
+                  <TaskRecordable key={task.id} task={task} />
+                ))}
+              </View>
+            </View>
+          ))}
         </View>
       </ScrollView>
-      <TaskAddButton style={styles.taskAddButton}/>
+      <TaskAddButton style={styles.taskAddButton} />
     </>
-  )
-}
+  );
+};
 
 const styles = StyleSheet.create({
   container: {
     paddingHorizontal: 24,
     backgroundColor: COLORS.primaryBackGround,
-    marginTop: -28
+    marginTop: -28,
   },
   taskGroup: {
     marginTop: 56,
@@ -132,5 +121,5 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.7,
     shadowRadius: 3,
     elevation: 5,
-  }
-})
+  },
+});
