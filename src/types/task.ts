@@ -1,12 +1,12 @@
 export type Task = {
-  id: string
-  name: string
-  last_checked: string
-}
+  id: string;
+  name: string;
+  last_checked: string;
+};
 
 export type TaskGroup = {
-  name: string
-  taskList: Task[]
-}
+  name: string;
+  taskList: Task[];
+};
 
-export type TaskGroupList = TaskGroup[]
+export type TaskGroupList = TaskGroup[];
