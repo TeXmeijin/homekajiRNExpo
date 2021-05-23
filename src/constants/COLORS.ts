@@ -5,4 +5,4 @@ export const COLORS = {
   disabled: '#9d8189',
   primaryLighten1: '#F7DCBE',
   primaryLighten2: '#F29A76',
-}
+};
