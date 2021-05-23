@@ -63,7 +63,7 @@ const TaskRecordable = (props: PropsWithChildren<{ task: Task }>) => {
       <View style={style.statuses}>
         <ActivityIndicator style={style.status} size='large' color='#999' animating={isSaving}/>
         <Animated.View style={{...style.check, ...style.status, opacity: fadeAnim}}>
-          <Image style={{width: 48, height: 48}} resizeMode='contain' source={require('../assets/checked.png')}/>
+          <Image style={{width: 48, height: 48}} resizeMode='contain' source={require('@/assets/checked.png')}/>
         </Animated.View>
       </View>
     </Pressable>
