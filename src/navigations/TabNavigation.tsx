@@ -3,7 +3,7 @@ import {createBottomTabNavigator} from "@react-navigation/bottom-tabs";
 import {TaskList} from "../screens/TaskList";
 import TaskListTabIcon from "../components/navigation/TaskListTabIcon";
 import ActivityListTabIcon from "../components/navigation/ActivityListTabIcon";
-import {ActivityList} from "src/screens/ActivityList";
+import {ActivityList} from "../screens/ActivityList";
 import {COLORS} from "../constants/COLORS";
 import AccountTabIcon from "../components/navigation/AccountTabIcon";
 
